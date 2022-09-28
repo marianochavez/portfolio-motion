@@ -1,5 +1,7 @@
+import {Heading} from "@chakra-ui/react";
+
 function App() {
-  return <h1>asd</h1>;
+  return <Heading>App</Heading>;
 }
 
 export default App;
