@@ -1,4 +1,4 @@
-import {Box, Flex, Heading, Image, Stack} from "@chakra-ui/react";
+import {Box, Flex, Heading, HStack, Image, Stack} from "@chakra-ui/react";
 import {motion, useTransform} from "framer-motion";
 import {useContext} from "react";
 
@@ -6,6 +6,7 @@ import {DataContext} from "../../context";
 import {useScrollClock} from "../../hooks/useScrollClock";
 import TextReveal from "../ui/TextReveal";
 
+const MotionHStack = motion(HStack);
 const MotionBox = motion(Box);
 
 const HeaderSection = () => {
@@ -25,6 +26,16 @@ const HeaderSection = () => {
                 <TextReveal delay={0.45} text={portfolio.about.lastName} />
               </Heading>
             </Box>
+
+            <MotionHStack
+              animate={{opacity: 1}}
+              initial={{opacity: 0}}
+              transition={{delay: 0.8, duration: 0.8}}
+            >
+              <Heading size="md">Frontend</Heading>
+              <Box alignSelf="center" bg="border-contrast-xl" flex={1} h="1px" />
+              <Heading size="md">Developer</Heading>
+            </MotionHStack>
           </Box>
         </Stack>
       </Flex>
@@ -55,7 +66,7 @@ const GradientImg = () => {
         w="100%"
       >
         <Image
-          alt="Intro section"
+          alt="Mariano Chavez"
           h="auto"
           src="https://res.cloudinary.com/chavedo/image/upload/c_fill,h_540,w_540/v1661138977/portfolio/20353670.webp"
           w="512px"

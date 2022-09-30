@@ -5,7 +5,7 @@ import {Languages} from "./DataContext";
 
 type DataActionType =
   | {type: "Data - Switch Language"}
-  | {type: "Data - Set Language"; payload: string};
+  | {type: "Data - Set Language"; payload: Languages};
 
 export const DataReducer = (state: DataState, action: DataActionType): DataState => {
   switch (action.type) {
@@ -19,7 +19,7 @@ export const DataReducer = (state: DataState, action: DataActionType): DataState
     case "Data - Set Language":
       return {
         ...state,
-        language: action.payload as Languages,
+        language: action.payload,
         portfolio: action.payload === "es" ? portfolioES : portfolioEN,
       };
 

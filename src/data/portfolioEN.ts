@@ -1,6 +1,11 @@
-import {portfolioType} from "./portfolioES";
+import {PortfolioType} from "./portfolioES";
 
-export const portfolioEN: portfolioType = {
+export const portfolioEN: PortfolioType = {
+  sections: [
+    {title: "About", to: "about"},
+    {title: "Projects", to: "projects"},
+    {title: "Contact", to: "contact"},
+  ],
   about: {
     firstName: "Mariano",
     lastName: "Chavez",

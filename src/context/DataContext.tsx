@@ -1,13 +1,13 @@
 import {createContext} from "react";
 
-import {portfolioType} from "../data";
+import {PortfolioType} from "../data";
 
 export type Languages = "en" | "es";
 
 interface ContextProps {
   language: Languages;
-  portfolio: portfolioType;
-  changeLanguage: () => void;
+  portfolio: PortfolioType;
+  toggleLanguage: () => void;
 }
 
 export const DataContext = createContext({} as ContextProps);

@@ -1,4 +1,5 @@
-export type portfolioType = {
+export type PortfolioType = {
+  sections: {title: string; to: string}[];
   about: {
     firstName: string;
     lastName: string;
@@ -17,7 +18,12 @@ export type portfolioType = {
   }[];
 };
 
-export const portfolioES: portfolioType = {
+export const portfolioES: PortfolioType = {
+  sections: [
+    {title: "Acerca", to: "about"},
+    {title: "Proyectos", to: "projects"},
+    {title: "Contacto", to: "contact"},
+  ],
   about: {
     firstName: "Mariano",
     lastName: "Chavez",

@@ -2,7 +2,7 @@ import type {Languages} from "./";
 
 import {useReducer, FC} from "react";
 
-import {portfolioEN, portfolioES, portfolioType} from "../data";
+import {portfolioEN, portfolioES, PortfolioType} from "../data";
 
 import {DataContext, DataReducer} from "./";
 
@@ -12,7 +12,7 @@ interface Props {
 
 export interface DataState {
   language: Languages;
-  portfolio: portfolioType;
+  portfolio: PortfolioType;
 }
 
 const getLanguage = (): Languages => {
@@ -35,7 +35,7 @@ const DATA_INITIAL_STATE: DataState = {
 export const DataProvider: FC<Props> = ({children}) => {
   const [state, dispatch] = useReducer(DataReducer, DATA_INITIAL_STATE);
 
-  const changeLanguage = () => {
+  const toggleLanguage = () => {
     dispatch({type: "Data - Switch Language"});
     localStorage.setItem("language", state.language === "es" ? "en" : "es");
   };
@@ -45,7 +45,7 @@ export const DataProvider: FC<Props> = ({children}) => {
       value={{
         ...state,
 
-        changeLanguage,
+        toggleLanguage,
       }}
     >
       {children}
