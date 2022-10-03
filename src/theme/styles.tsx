@@ -8,6 +8,8 @@ export const styles = {
     },
     body: {
       bgColor: "bg-body",
+      transitionProperty: "background, background-color, color",
+      transitionDuration: "1s",
     },
     "::selection": {
       background: "white",

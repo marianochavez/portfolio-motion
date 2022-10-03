@@ -77,6 +77,10 @@ export const semanticTokens = {
       default: "rgba(0, 0, 0, 0.5)",
       _dark: "rgba(255, 255, 255, 0.5)",
     },
+    "border-contrast": {
+      default: "black",
+      _dark: "white",
+    },
     "focus-ring": {
       default: "black",
       _dark: "white",

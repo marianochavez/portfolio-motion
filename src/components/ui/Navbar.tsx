@@ -29,13 +29,12 @@ import {DataContext} from "../../context";
 
 const BoxMotion = motion(Box);
 const TextMotion = motion(Text);
-const HeadingMotion = motion(Heading);
 
 const SectionToggleVariants = {
-  initial: {opacity: 0},
-  animate: {opacity: 1},
+  initial: {opacity: 0, y: 100},
+  animate: {opacity: 1, y: 0},
   exit: {opacity: 0},
-  hover: {scale: 1.2, transition: {duration: 0.3}},
+  hover: {scale: 1.2, transition: {duration: 0.1}},
   tap: {scale: 0.9, transition: {duration: 0.1}},
 };
 
@@ -53,16 +52,26 @@ export const Navbar = () => {
   }, [scrollY]);
 
   return (
-    <BoxMotion display={display} position="fixed" style={{opacity}} top={0} w="100%" zIndex={99}>
+    <BoxMotion
+      display={display}
+      h="70px"
+      position="fixed"
+      style={{opacity}}
+      top={0}
+      w="100%"
+      zIndex={99}
+    >
       <Flex
         alignItems="center"
-        backdropFilter="blur(3px)"
+        backdropFilter="blur(8px)"
         bg={useColorModeValue("#ffffff4d", "#0000004d")}
-        h="70px"
+        h="100%"
         p={3}
+        // bg={useColorModeValue("#0000004d","#ffffff4d")}
+        // bg="black"
       >
         <TextLogo />
-        <HStack display={{base: "none", lg: "flex"}} flex={1} justifyContent="space-between">
+        {/* <HStack display={{base: "none", lg: "flex"}} flex={1} justifyContent="space-between">
           {portfolio.sections.map((section) => (
             <AnimatePresence key={section.title} mode="wait">
               <HeadingMotion
@@ -77,23 +86,23 @@ export const Navbar = () => {
                 whileHover="hover"
                 whileTap="tap"
               >
-                <LinkScroll smooth={true} to={section.to}>
+                <LinkScroll smooth offset={-100} to={section.to}>
                   {section.title}
                 </LinkScroll>
               </HeadingMotion>
             </AnimatePresence>
           ))}
-        </HStack>
-        <HStack flex={1} justifyContent="end">
+        </HStack> */}
+        <HStack flex={1} h="100%" justifyContent="end">
           <LangToggleButton />
           <ColorToggleButton />
           <IconButton
             aria-label="Menu button"
-            display={{base: "block", lg: "none"}}
-            icon={<RiMenu3Line />}
+            h="40px"
+            icon={<RiMenu3Line style={{fontSize: "20px"}} />}
             id="Drawer icon"
             rounded="full"
-            size={{base: "lg", md: "md"}}
+            w="40px"
             onClick={onOpen}
           />
         </HStack>
@@ -115,14 +124,35 @@ const DrawerMenu = ({isOpen, sections, onClose}: DrawerMenuProps) => (
     <DrawerContent>
       <DrawerCloseButton fontSize="2xl" mt={6} />
       <DrawerHeader>
-        <Heading>MC</Heading>
+        <Button variant="unstyled">
+          <Heading smooth as={LinkScroll} to="intro" onClick={onClose}>
+            MC
+          </Heading>
+        </Button>
       </DrawerHeader>
 
       <DrawerBody>
         <VStack gap={5} mt={8}>
-          {sections.map((section) => (
-            <Button key={section.title} variant="unstyled">
-              <Heading as={LinkScroll} fontSize="2xl" to={section.to}>
+          {sections.map((section, i) => (
+            <Button
+              key={section.title}
+              as={motion.button}
+              initial="initial"
+              transitionDelay={`${i / 100}s`}
+              variant="unstyled"
+              variants={SectionToggleVariants}
+              whileHover="hover"
+              whileInView="animate"
+              whileTap="tap"
+            >
+              <Heading
+                smooth
+                as={LinkScroll}
+                fontSize="2xl"
+                offset={-100}
+                to={section.to}
+                onClick={onClose}
+              >
                 {section.title}
               </Heading>
             </Button>
@@ -152,6 +182,7 @@ const ColorToggleButton = () => {
   return (
     <IconButton
       aria-label="Change color mode button"
+      h="40px"
       icon={
         <AnimatePresence initial={false} mode="wait">
           <BoxMotion
@@ -167,8 +198,8 @@ const ColorToggleButton = () => {
         </AnimatePresence>
       }
       rounded="full"
-      size={{base: "lg", md: "md"}}
       variant="solid"
+      w="40px"
       onClick={toggleColorMode}
     />
   );
@@ -178,12 +209,7 @@ const LangToggleButton = () => {
   const {language, toggleLanguage} = useContext(DataContext);
 
   return (
-    <Button
-      rounded="full"
-      size={{base: "lg", md: "md"}}
-      variant="solid"
-      onClick={() => toggleLanguage()}
-    >
+    <Button h="40px" rounded="full" variant="solid" onClick={() => toggleLanguage()}>
       <AnimatePresence initial={false} mode="wait">
         <TextMotion
           key={language}
@@ -201,16 +227,9 @@ const LangToggleButton = () => {
 };
 
 const TextLogo = () => (
-  <HeadingMotion
-    display={{base: "none", lg: "flex"}}
-    flex={1}
-    fontSize="4xl"
-    style={{cursor: "pointer"}}
-    variants={SectionToggleVariants}
-    whileTap="tap"
-  >
-    <LinkScroll smooth={true} to="intro">
+  <Heading display={{base: "none", lg: "flex"}} flex={1} fontSize="4xl" style={{cursor: "pointer"}}>
+    <LinkScroll smooth to="intro">
       MC
     </LinkScroll>
-  </HeadingMotion>
+  </Heading>
 );

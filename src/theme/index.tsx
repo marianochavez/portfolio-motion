@@ -11,6 +11,7 @@ import {components} from "./components";
 const config: ThemeConfig = {
   initialColorMode: "dark",
   useSystemColorMode: false,
+  disableTransitionOnChange: false,
 };
 
 export const theme = extendTheme({
