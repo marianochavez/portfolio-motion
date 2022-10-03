@@ -60,17 +60,15 @@ type ProjectItemProps = {
 };
 
 const boxVariants = {
-  initial: {scale: 1.005},
+  initial: {x: 0, y: 0},
   hovered: {x: 6, y: 6},
 };
 
 const imageVariants = {
-  intial: {scale: 1.05},
   hovered: {scale: 1, opacity: 0.5},
 };
 
 const buttonVariants = {
-  intial: {opacity: 0},
   hovered: {opacity: 1},
 };
 
@@ -100,7 +98,7 @@ const ProjectItem = ({project}: ProjectItemProps) => {
             alt={project.name}
             as={motion.img}
             h="190px"
-            initial="initial"
+            initial={{scale: 1.05}}
             objectFit="cover"
             src={project.img}
             variants={imageVariants}
@@ -113,7 +111,7 @@ const ProjectItem = ({project}: ProjectItemProps) => {
                 as={motion.button}
                 colorScheme="purple"
                 display={isHovered ? "block" : "none"}
-                initial="intial"
+                initial={{opacity: 0}}
                 size="sm"
                 variants={buttonVariants}
               >
