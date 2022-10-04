@@ -7,7 +7,6 @@ import {
   GridItem,
   Heading,
   HStack,
-  Icon,
   Img,
   Link,
   SimpleGrid,
@@ -16,17 +15,14 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {motion} from "framer-motion";
-import {BsChevronDoubleDown} from "react-icons/bs";
 
 import {DataContext} from "../../context";
-
-const CenterMotion = motion(Center);
 
 const ProjectSection = () => {
   const {language, portfolio} = useContext(DataContext);
 
   return (
-    <Box mt={52}>
+    <Box>
       <Center p={10}>
         <Heading fontSize="4xl">{language === "es" ? "Proyectos" : "Projects"}</Heading>
       </Center>
@@ -36,14 +32,6 @@ const ProjectSection = () => {
           <ProjectItem key={project.name} project={project} />
         ))}
       </SimpleGrid>
-      <CenterMotion
-        animate={{opacity: 1}}
-        initial={{opacity: 0}}
-        pt={10}
-        transition={{repeat: Infinity, repeatType: "reverse", duration: 1}}
-      >
-        <Icon as={BsChevronDoubleDown} fontSize="6xl" />
-      </CenterMotion>
     </Box>
   );
 };

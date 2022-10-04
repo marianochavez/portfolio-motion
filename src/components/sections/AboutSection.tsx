@@ -7,6 +7,7 @@ import {
   Heading,
   Highlight,
   Image,
+  Link,
   Show,
   Text,
 } from "@chakra-ui/react";
@@ -81,9 +82,16 @@ const AboutSection = () => {
               <Heading order={2} size="lg" textAlign="center">
                 {portfolio.about.firstName} {portfolio.about.lastName}
               </Heading>
-              <Button layout as={motion.button} colorScheme="purple" order={[1, 3]}>
-                {language === "es" ? "Descargar CV" : "Download resume"}
-              </Button>
+              <Link
+                isExternal
+                _hover={{textDecor: "none"}}
+                href="/cv-Mariano-Chavez.pdf"
+                order={[1, 3]}
+              >
+                <Button layout as={motion.button} colorScheme="purple">
+                  {language === "es" ? "Descargar CV" : "Download resume"}
+                </Button>
+              </Link>
             </Show>
           </Center>
         </Flex>
