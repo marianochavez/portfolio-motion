@@ -38,7 +38,7 @@ const SectionToggleVariants = {
   tap: {scale: 0.9, transition: {duration: 0.1}},
 };
 
-export const Navbar = () => {
+const Navbar = () => {
   const {portfolio} = useContext(DataContext);
   const {isOpen, onOpen, onClose} = useDisclosure();
   const [display, setDisplay] = useState<"none" | "block">("none");
@@ -67,8 +67,6 @@ export const Navbar = () => {
         bg={useColorModeValue("#ffffff4d", "#0000004d")}
         h="100%"
         p={3}
-        // bg={useColorModeValue("#0000004d","#ffffff4d")}
-        // bg="black"
       >
         <TextLogo />
         {/* <HStack display={{base: "none", lg: "flex"}} flex={1} justifyContent="space-between">
@@ -233,3 +231,5 @@ const TextLogo = () => (
     </LinkScroll>
   </Heading>
 );
+
+export default Navbar;

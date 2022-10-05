@@ -1,32 +1,37 @@
 import {Box} from "@chakra-ui/react";
-import {Element} from "react-scroll";
+import {Element as ScrollSection} from "react-scroll";
 
 import AboutSection from "./components/sections/AboutSection";
 import ContactSection from "./components/sections/ContactSection";
 import HeaderSection from "./components/sections/HeaderSection";
-import ProjectSection from "./components/sections/ProjectsSection";
+import ProjectSection from "./components/sections/ProjectSection";
 import ChevronNav from "./components/ui/ChevronNav";
+import Navbar from "./components/ui/Navbar";
 import Footer from "./components/ui/Footer";
-import {Navbar} from "./components/ui/Navbar";
 
 function App() {
   return (
     <Box>
       <Navbar />
-      <Element name="intro">
+
+      <ScrollSection name="intro">
         <HeaderSection />
-      </Element>
-      <Element name="about">
+      </ScrollSection>
+
+      <ScrollSection name="about">
         <AboutSection />
         <ChevronNav toElement="projects" />
-      </Element>
-      <Element name="projects">
+      </ScrollSection>
+
+      <ScrollSection name="projects">
         <ProjectSection />
         <ChevronNav toElement="contact" />
-      </Element>
-      <Element name="contact">
+      </ScrollSection>
+
+      <ScrollSection name="contact">
         <ContactSection />
-      </Element>
+      </ScrollSection>
+
       <Footer />
     </Box>
   );

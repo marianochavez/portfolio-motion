@@ -1,40 +1,17 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {
   Box,
   Button,
-  Center,
   Flex,
   GridItem,
-  Heading,
   HStack,
   Img,
   Link,
-  SimpleGrid,
   Tag,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {motion} from "framer-motion";
-
-import {DataContext} from "../../context";
-
-const ProjectSection = () => {
-  const {language, portfolio} = useContext(DataContext);
-
-  return (
-    <Box>
-      <Center p={10}>
-        <Heading fontSize="4xl">{language === "es" ? "Proyectos" : "Projects"}</Heading>
-      </Center>
-
-      <SimpleGrid columns={[1, 2, 2, 3]} gap={6} px={{base: "3xl", md: "2xl", lg: "5xl"}}>
-        {portfolio.projects.map((project) => (
-          <ProjectItem key={project.name} project={project} />
-        ))}
-      </SimpleGrid>
-    </Box>
-  );
-};
 
 type ProjectItemProps = {
   project: {
@@ -45,6 +22,7 @@ type ProjectItemProps = {
     github: string;
     description: string;
   };
+  language: string;
 };
 
 const boxVariants = {
@@ -60,8 +38,7 @@ const buttonVariants = {
   hovered: {opacity: 1},
 };
 
-const ProjectItem = ({project}: ProjectItemProps) => {
-  const {language} = useContext(DataContext);
+const ProjectItem = ({project, language}: ProjectItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useBreakpointValue({base: true, sm: false});
 
@@ -148,4 +125,4 @@ const ProjectItem = ({project}: ProjectItemProps) => {
   );
 };
 
-export default ProjectSection;
+export default ProjectItem;
