@@ -32,7 +32,7 @@ export const portfolioES: PortfolioType = {
     bio: `
 Soy estudiante avanzado de Ingeniería en Sistemas de Información y amante de la programación.
 
-Tengo conocimientos tanto en Backend desarrollando aplicaciones en Django, Rails y Node.js; como en Frontend desarrollando aplicaciones web, generalmente con JavaScript/React, actualmente me encuentro enfocado en Next.js.
+Tengo conocimientos tanto en Backend desarrollando aplicaciones en Django, Rails y Node.js; como en Frontend desarrollando aplicaciones web, generalmente con JavaScript/React/Next, actualmente me encuentro enfocado en React Native.
 
 Siempre me ha gustado aprender tecnologías nuevas, considero necesario y de gran valor tener conocimientos en distintas áreas por más que sean ajenas a nuestra especialización.
 `,

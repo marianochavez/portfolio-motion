@@ -14,7 +14,7 @@ export const portfolioEN: PortfolioType = {
     bio: `
 I'm an advanced student of Information Systems Engineering and a programming lover.
 
-I have knowledge both in Backend developing applications in Django, Rails and Node.js; as in Frontend developing web applications usually with JavaScript/React, I'm currently focused on Next.js.
+I have knowledge both in Backend developing applications in Django, Rails and Node.js; as in Frontend developing web applications usually with JavaScript/React/Next, I'm currently focused on React Native.
 
 Likewise, I have always liked to learn new technologies, I consider it necessary and of great value to have knowledge in different areas, even if they are outside our specialization.
 `,
