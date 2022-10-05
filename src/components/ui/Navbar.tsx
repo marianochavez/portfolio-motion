@@ -149,7 +149,7 @@ const DrawerMenu = ({isOpen, sections, onClose}: DrawerMenuProps) => (
                 smooth
                 as={LinkScroll}
                 fontSize="2xl"
-                offset={-100}
+                offset={-70}
                 to={section.to}
                 onClick={onClose}
               >

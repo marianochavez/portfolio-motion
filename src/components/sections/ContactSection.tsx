@@ -140,7 +140,15 @@ const ContactSection = () => {
           order={2}
           orientation="vertical"
         />
-        <Box flex={1} order={[1, 3]} w="full">
+        <Box
+          as={motion.div}
+          flex={1}
+          initial={{opacity: 0}}
+          order={[1, 3]}
+          transition="ease-in 0.3s"
+          w="full"
+          whileInView={{opacity: 1}}
+        >
           <form
             noValidate
             style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}
