@@ -52,9 +52,16 @@ const AboutSection = () => {
               </Highlight>
             </Text>
             <Center display={{base: "flex", md: "none"}} pt={4}>
-              <Button colorScheme="purple">
-                {language === "es" ? "Descargar CV" : "Download resume"}
-              </Button>
+              <Link
+                isExternal
+                _hover={{textDecor: "none"}}
+                href="/cv-Mariano-Chavez.pdf"
+                order={[1, 3]}
+              >
+                <Button layout as={motion.button} colorScheme="purple">
+                  {language === "es" ? "Descargar CV" : "Download resume"}
+                </Button>
+              </Link>
             </Center>
           </Box>
           <Center

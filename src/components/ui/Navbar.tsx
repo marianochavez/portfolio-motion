@@ -13,6 +13,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Link,
   Text,
   useColorMode,
   useColorModeValue,
@@ -24,6 +25,7 @@ import {Link as LinkScroll} from "react-scroll";
 import {ImSun} from "react-icons/im";
 import {FaMoon} from "react-icons/fa";
 import {RiMenu3Line} from "react-icons/ri";
+import {BsGithub, BsLinkedin, BsTwitter} from "react-icons/bs";
 
 import {DataContext} from "../../context";
 
@@ -31,8 +33,8 @@ const BoxMotion = motion(Box);
 const TextMotion = motion(Text);
 
 const SectionToggleVariants = {
-  initial: {opacity: 0, y: 100},
-  animate: {opacity: 1, y: 0},
+  initial: {opacity: 0, x: -100},
+  animate: {opacity: 1, x: 0},
   exit: {opacity: 0},
   hover: {scale: 1.2, transition: {duration: 0.1}},
   tap: {scale: 0.9, transition: {duration: 0.1}},
@@ -69,28 +71,6 @@ const Navbar = () => {
         p={3}
       >
         <TextLogo />
-        {/* <HStack display={{base: "none", lg: "flex"}} flex={1} justifyContent="space-between">
-          {portfolio.sections.map((section) => (
-            <AnimatePresence key={section.title} mode="wait">
-              <HeadingMotion
-                key="navItem"
-                animate="animate"
-                exit="exit"
-                fontSize="lg"
-                initial="initial"
-                style={{cursor: "pointer"}}
-                transition={{duration: 1}}
-                variants={SectionToggleVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                <LinkScroll smooth offset={-100} to={section.to}>
-                  {section.title}
-                </LinkScroll>
-              </HeadingMotion>
-            </AnimatePresence>
-          ))}
-        </HStack> */}
         <HStack flex={1} h="100%" justifyContent="end">
           <LangToggleButton />
           <ColorToggleButton />
@@ -117,7 +97,7 @@ type DrawerMenuProps = {
 };
 
 const DrawerMenu = ({isOpen, sections, onClose}: DrawerMenuProps) => (
-  <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+  <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
     <DrawerOverlay />
     <DrawerContent>
       <DrawerCloseButton fontSize="2xl" mt={6} />
@@ -158,14 +138,44 @@ const DrawerMenu = ({isOpen, sections, onClose}: DrawerMenuProps) => (
         </VStack>
       </DrawerBody>
 
-      <DrawerFooter>
-        <Button mr={3} variant="outline" onClick={onClose}>
-          TW
-        </Button>
-        <Button colorScheme="blue">LK</Button>
+      <DrawerFooter alignItems="center" justifyContent="space-evenly" my={10}>
+        <DrawerSocialButton
+          ariaLabel="linkedin"
+          href="https://www.linkedin.com/in/mariano-chavez"
+          icon={<BsLinkedin />}
+        />
+        <DrawerSocialButton
+          ariaLabel="twitter"
+          href="https://twitter.com/chavedoo"
+          icon={<BsTwitter />}
+        />
+        <DrawerSocialButton
+          ariaLabel="github"
+          href="https://github.com/marianochavez"
+          icon={<BsGithub />}
+        />
       </DrawerFooter>
     </DrawerContent>
   </Drawer>
+);
+
+type DrawerSocialButton = {
+  href: string;
+  icon: React.ReactElement<any>;
+  ariaLabel: string;
+};
+
+const DrawerSocialButton = ({href, ariaLabel, icon}: DrawerSocialButton) => (
+  <IconButton
+    isExternal
+    aria-label={ariaLabel}
+    as={Link}
+    bg="none"
+    fontSize="4xl"
+    href={href}
+    icon={icon}
+    rounded="full"
+  />
 );
 
 const IconToggleVariants = {
