@@ -30,12 +30,11 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       description: `Store for clothing sales with user management, orders, purchases and payment. It contains an administrative part for statistics, users and products.`,
     },
     {
-      name: "Calendar",
-      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661524268/portfolio/calendar-app.webp",
-      tools: ["React", "Node", "Redux", "PWA", "MongoDB", "Enzyme"],
-      url: "https://react-calendar-app-frontend.vercel.app/",
-      github: "https://github.com/marianochavez/react_calendarApp_frontend",
-      description: `Calendar with different views that allows you to add events by date and time. It uses a backend made in Node.js.`,
+      name: "UPS Clone",
+      img: "https://res.cloudinary.com/chavedo/image/upload/v1666536699/portfolio/react_native.png",
+      tools: ["React Native", "TypeScript", "Stepzen", "Tailwind", "RNElements", "Expo"],
+      github: "https://github.com/marianochavez/ups_react_native",
+      description: `Application to track packages and search for users.`,
     },
     {
       name: "Jaguarete Kaa",
@@ -44,6 +43,14 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       url: "https://jaguaretekaaecommerce.herokuapp.com/",
       github: "https://github.com/marianochavez/jaguarete_ecommerce_django",
       description: `Ecommerce for the sale of technological products. It has user management, products, categories, account recovery and administrative page.`,
+    },
+    {
+      name: "Calendar",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661524268/portfolio/calendar-app.webp",
+      tools: ["React", "Node", "Redux", "PWA", "MongoDB", "Enzyme"],
+      url: "https://react-calendar-app-frontend.vercel.app/",
+      github: "https://github.com/marianochavez/react_calendarApp_frontend",
+      description: `Calendar with different views that allows you to add events by date and time. It uses a backend made in Node.js.`,
     },
     {
       name: "Tateti",
@@ -56,10 +63,17 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
     {
       name: "Map box",
       img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661526366/portfolio/mapbox-app.webp",
-      tools: ["React", "TypeScript", "Mapbox"],
+      tools: ["React", "TypeScript", "Mapbox", "Axios"],
       url: "https://mapbox-react-mc.netlify.app/",
       github: "https://github.com/marianochavez/react_mapbox",
       description: `Page to search for addresses and mark your route using mapbox.`,
+    },
+    {
+      name: "Arg News",
+      img: "https://res.cloudinary.com/chavedo/image/upload/v1666538359/portfolio/node_news.png",
+      tools: ["Node.js", "Express", "Docker", "EJS", "Axios"],
+      github: "https://github.com/marianochavez/openjira_nextjs",
+      description: `Dockerized page to obtain news, weather, dollar exchange and covid statistics.`,
     },
     {
       name: "Open Jira",
@@ -67,6 +81,13 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       tools: ["NextJS", "TypeScript", "MongoDB", "Docker"],
       github: "https://github.com/marianochavez/openjira_nextjs",
       description: `Task management page simulating Jira, with drag and drop.`,
+    },
+    {
+      name: "+50 Projects",
+      img: "https://res.cloudinary.com/chavedo/image/upload/v1666538824/portfolio/github.webp",
+      tools: ["GitHub"],
+      github: "https://github.com/marianochavez",
+      description: `These are just some of my projects, you can see more in my GitHub repository.`,
     },
   ],
 };

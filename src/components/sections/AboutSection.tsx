@@ -80,6 +80,7 @@ const AboutSection = () => {
               borderRadius="full"
               boxSize="10rem"
               initial={{opacity: 0}}
+              loading="lazy"
               objectFit="cover"
               order={[3, 1]}
               src={portfolio.about.img}

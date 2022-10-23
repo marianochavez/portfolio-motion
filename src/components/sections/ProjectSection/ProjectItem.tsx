@@ -64,6 +64,7 @@ const ProjectItem = ({project, language}: ProjectItemProps) => {
             as={motion.img}
             h="190px"
             initial={{scale: 1.05}}
+            loading="lazy"
             objectFit="cover"
             src={project.img}
             variants={imageVariants}
@@ -102,14 +103,16 @@ const ProjectItem = ({project, language}: ProjectItemProps) => {
 
         <Box
           as={motion.div}
-          h="100%"
+          display="flex"
+          flexDir="column"
+          h="calc(100% - 190px)"
           p={3}
           onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
         >
           <Text fontSize="2xl" fontWeight="bold">
             {project.name}
           </Text>
-          <Box fontSize="sm" pt={2}>
+          <Box flex={1} fontSize="sm" pt={2}>
             {project.description}
           </Box>
           <Box pt={2}>
