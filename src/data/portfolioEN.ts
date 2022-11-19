@@ -45,6 +45,14 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       description: `Ecommerce for the sale of technological products. It has user management, products, categories, account recovery and administrative page.`,
     },
     {
+      name: "Ebay Thirdweb",
+      img: "https://res.cloudinary.com/chavedo/image/upload/v1668881622/portfolio/ebay-thirdweb.webp",
+      tools: ["NextJS", "TypeScript", "Thirdweb", "Tailwind", "Ethers"],
+      url: "https://ebay-thirdweb-five.vercel.app/",
+      github: "https://github.com/marianochavez/ebay_thirdweb",
+      description: `Page for sale of NFTs from my collection with auction included.`,
+    },
+    {
       name: "Calendar",
       img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661524268/portfolio/calendar-app.webp",
       tools: ["React", "Node", "Redux", "PWA", "MongoDB", "Enzyme"],
@@ -74,13 +82,6 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       tools: ["Node.js", "Express", "Docker", "EJS", "Axios"],
       github: "https://github.com/marianochavez/openjira_nextjs",
       description: `Dockerized page to obtain news, weather, dollar exchange and covid statistics.`,
-    },
-    {
-      name: "Open Jira",
-      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661526934/portfolio/openjira.webp",
-      tools: ["NextJS", "TypeScript", "MongoDB", "Docker"],
-      github: "https://github.com/marianochavez/openjira_nextjs",
-      description: `Task management page simulating Jira, with drag and drop.`,
     },
     {
       name: "+50 Projects",
